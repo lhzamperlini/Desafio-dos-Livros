@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center container">
+    <h1 class="display-4">Bem Vindo(a)!</h1>
+
+    <div class="w-100 text-start">
+ 
+        <h2>Problemas a serem resolvidos:</h2>
+
+        <h3 class="mb-3 mt-4">Bugs:</h3>
+        <h4>1. Bug na adição de livros:</h4>
+        <p>
+            <strong>Descrição:</strong> Quando um livro é adicionado com um ISBN que já existe no sistema, ele deve retornar uma mensagem de erro, mas atualmente o sistema permite a duplicação.
+            <br><strong>Teste:</strong> O candidato deve corrigir a lógica para verificar a duplicação de ISBN antes de adicionar um novo livro.
+        </p>
+
+        <h4>2. Bug na remoção de livros:</h4>
+        <p>
+            <strong>Descrição:</strong> O método de remoção não está funcionando corretamente. Quando o botão de remover é clicado, o livro ainda aparece na lista de livros disponíveis.
+            <br><strong>Teste:</strong> O candidato deve revisar o método de remoção para garantir que o livro seja efetivamente removido da coleção.
+        </p>
+
+        <h4>3. Bug no botão "Adicionar Novo Livro":</h4>
+        <p>
+            <strong>Descrição:</strong> O botão que adiciona um novo livro na tela de lista de livros não funciona.
+            <br><strong>Teste:</strong> O candidato deve revisar o botão de adicionar e corrigir o problema de modo que a tela de cadastrar livros se abra.
+        </p>
+
+        <h3 class="mb-3 mt-4">Implementações:</h3>
+        <h4>1. Implementar Tela de detalhes:</h4>
+        <p>
+            <strong>Descrição:</strong> Atualmente o botão de detalhes da lista não funciona.
+            <br><strong>Teste:</strong> O candidato deve criar uma View e um método no controller que busque os dados de um livro específico e os mostre na tela.
+        </p>
+
+        <h4>2. Implementar busca avançada:</h4>
+        <p>
+            <strong>Descrição:</strong> O sistema deve permitir a busca de livros por autor, título e descrição em uma única interface de busca.
+            <br><strong>Teste:</strong> O candidato deve implementar um método que aceite critérios de busca opcionais e retorne os livros que correspondem a qualquer um dos critérios.
+        </p>
+
+    </div>
+</div>

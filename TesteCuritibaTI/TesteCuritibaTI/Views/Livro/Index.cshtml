@@ -1,0 +1,70 @@
+﻿@model Livro
+@{
+    var cadastrado = TempData["Cadastrado"] as bool?;
+    ViewBag.Title = "Cadastrar Livro";
+}
+
+<div class="container">
+    @if (cadastrado != null)
+    {
+        if (cadastrado == true)
+        {
+
+            <div class="alert alert-success" role="alert">
+                Livro cadastrado com sucesso!
+            </div>
+        }
+   
+    }
+
+    <h2>@ViewBag.Title</h2>
+
+    <form asp-action="Cadastrar" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="Titulo">Título</label>
+            <input type="text" class="form-control" id="Titulo" name="Titulo" value="@Model.Titulo" required>
+            <div class="invalid-feedback">Por favor, informe o título do livro.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="Autor">Autor</label>
+            <input type="text" class="form-control" id="Autor" name="Autor" value="@Model.Autor" required>
+            <div class="invalid-feedback">Por favor, informe o autor do livro.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="ISBN">ISBN</label>
+            <input type="text" class="form-control" id="ISBN" name="ISBN" value="@Model.ISBN" required>
+            <div class="invalid-feedback">Por favor, informe o ISBN do livro.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="Descricao">Descrição</label>
+            <textarea class="form-control" id="Descricao" name="Descricao" rows="4" required>@Model.Descricao</textarea>
+            <div class="invalid-feedback">Por favor, informe a descrição do livro.</div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+}

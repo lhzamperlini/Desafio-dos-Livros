@@ -1,0 +1,43 @@
+﻿@model List<Livro>
+@{
+    ViewBag.Title = "Lista de Livros";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <h1 class="mb-4">Lista de Livros</h1>
+        <a href="/Livro/Create" class="btn btn-primary">Adicionar Novo Livro</a>
+
+    </div>
+    
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th colspan="2">Descricao</th>
+                <th>Autor</th>
+                <th>ISBN</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var livro in Model)
+            {
+                <tr>
+                    <td>@livro.Id</td>
+                    <td>@livro.Titulo</td>
+                    <td colspan="2">@livro.Descricao</td>
+                    <td>@livro.Autor</td>
+                    <td>@livro.ISBN</td>
+                    <td class="text-center">
+                        <a href="/Livro/Details/@livro.Id" class="btn btn-info btn-sm">Detalhes</a>
+                        <a href="/Livro/Edit/@livro.Id" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="/Livro/Delete/@livro.Id" class="btn btn-danger btn-sm">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
